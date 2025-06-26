@@ -16,7 +16,7 @@ const client = await clientPromise;
         }
       }
       const kursus = await db.collection("kursus").find({
-        title: {$regex:filter, $options:'1'},
+        title: {$regex:filter, $options:'i'},
       }, options).toArray();
       res.json({ status: 200, data: kursus });
       break;
